@@ -39,7 +39,7 @@ Before you begin, ensure you have installed:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/meeting-intelligence-platform.git
+git clone https://github.com/gurujayanth48/meeting-intelligence-platform.git
 cd meeting-intelligence-platform
 ```
 
@@ -128,10 +128,10 @@ Create a `.env` file in the `backend/` directory:
 DATABASE_URL=sqlite:///./meeting_insights.db
 
 # AI Services
-WHISPER_API_URL=http://localhost:8000
 OLLAMA_API_URL=http://localhost:11434
 CHROMA_HOST=localhost
 CHROMA_PORT=8000
+WHISPER_MODEL=base
 
 # File Upload
 UPLOAD_DIR=./uploads
@@ -148,7 +148,7 @@ PORT=8000
 ```python
 class Settings:
     DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./meeting_insights.db")
-    WHISPER_API_URL = os.getenv("WHISPER_API_URL", "http://localhost:8000")
+    WHISPER_MODEL = os.getenv("WHISPER_MODEL", "base")
     OLLAMA_API_URL = os.getenv("OLLAMA_API_URL", "http://localhost:11434")
     CHROMA_HOST = os.getenv("CHROMA_HOST", "localhost")
     CHROMA_PORT = int(os.getenv("CHROMA_PORT", "8000"))
