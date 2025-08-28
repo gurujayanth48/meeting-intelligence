@@ -1,4 +1,3 @@
-# meeting-intelligence
 # AI Meeting Intelligence Platform
 
 A web application that extracts actionable insights from meeting recordings using AI technologies. Upload your audio/video meetings and get automatically extracted action items, decisions, participants, and searchable content.
