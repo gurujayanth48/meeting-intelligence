@@ -245,7 +245,7 @@ meeting-intelligence/
 │   │   ├── core/         # Configuration and database
 │   │   ├── models/       # Database models
 │   │   ├── services/     # Business logic
-│   │   └── utils/        # Helper functions
+│   │  
 │   ├── ai/
 │   │   ├── transcription/ # Whisper client
 │   │   ├── extraction/    # LLM client
@@ -264,44 +264,6 @@ meeting-intelligence/
 │   └── tailwind.config.js # Tailwind configuration
 ├── README.md             # This file
 └── .env                  # Environment variables
-```
-
-## 🐳 Docker Deployment (Optional)
-
-Create `docker-compose.yml`:
-
-```yaml
-version: '3.8'
-services:
-  backend:
-    build: ./backend
-    ports:
-      - "8000:8000"
-    environment:
-      - DATABASE_URL=sqlite:///./meeting_insights.db
-    volumes:
-      - ./backend:/app
-    depends_on:
-      - chromadb
-      - ollama
-
-  frontend:
-    build: ./frontend
-    ports:
-      - "5173:5173"
-    volumes:
-      - ./frontend:/app
-      - /app/node_modules
-
-  chromadb:
-    image: chromadb/chroma:latest
-    ports:
-      - "8000:8000"
-
-  ollama:
-    image: ollama/ollama:latest
-    ports:
-      - "11434:11434"
 ```
 
 ## 🔧 Troubleshooting
@@ -359,13 +321,6 @@ MAX_FILE_SIZE=500  # 500MB
 3. **For production**: Consider using GPU-accelerated versions of AI services
 4. **For large files**: Implement chunked processing and progress tracking
 
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
 
 ## 📄 License
 
@@ -379,13 +334,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [FastAPI](https://fastapi.tiangolo.com/) for backend framework
 - [React](https://reactjs.org/) for frontend framework
 
-## 📞 Support
-
-If you encounter any issues or have questions:
-1. Check the [Issues](https://github.com/yourusername/meeting-intelligence-platform/issues) section
-2. Create a new issue with detailed information about your problem
-3. Include error messages, steps to reproduce, and your environment details
-
----
-
-**Happy Meeting Analyzing!** 🎯
